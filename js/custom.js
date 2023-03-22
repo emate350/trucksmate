@@ -710,10 +710,13 @@ All JavaScript fuctions Start
 	//  Counter Section function by = counterup.min.js
 	function counter_section(){
 		jQuery('.counter').counterUp({
-			delay: 10,
-			time: 3000
+			delay: 6,
+			time: 1000
 		});	
 	}	
+	
+	// counter function
+	
 
 		
 	// sidebarCollapse function by = custom.js
@@ -1202,33 +1205,6 @@ jQuery(window).on('scroll', function () {
 	Document on  Submit FUNCTION START
 ===========================*/
 
-	// > Contact form function by = custom.js	
-	jQuery(document).on('submit', 'form.cons-contact-form', function(e){
-		e.preventDefault();
-		var form = jQuery(this);
-		/* sending message */
-		jQuery.ajax({
-			url: 'https://trucksmate.com/jobzilla/phpmailer/mail.php',
-			
-			data: form.serialize() + "&action=contactform",
-			type: 'POST',
-			dataType: 'JSON',
-			beforeSend: function() {
-				jQuery('.loading-area').show();
-			},
-
-			success:function(data){
-				jQuery('.loading-area').hide();
-				if(data['success']){
-				jQuery("<div class='alert alert-success'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');
-				}else{
-				jQuery("<div class='alert alert-danger'>"+data['message']+"</div>").insertBefore('form.cons-contact-form');	
-				}
-			}
-		});
-		jQuery('.cons-contact-form').trigger("reset");
-		return false;
-	});
 
 /*===========================
 	Document on  Submit FUNCTION END
