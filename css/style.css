@@ -545,7 +545,7 @@ ol li {
 }
 
 .p-t120 {
-  padding-top: 120px;
+  padding-top: 40px;
 }
 
 .p-t130 {
@@ -2139,6 +2139,114 @@ ol li {
 .site-button-secondry:hover {
   background-color: #f9fcff;
   color: #000;
+}
+
+
+
+.site-button-www {
+  color: #1967d2;
+  padding: 15px 40px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+.site-button-www.sb-bdr-light {
+  border-right: 6px solid #fff;
+}
+.site-button-www:active, .site-button-secondry:focus, .site-button-secondry:visited {
+  background-color: #000;
+  color: #fff;
+}
+.site-button-www:hover {
+  background-color: #000;
+  color: #f9fcff;
+}
+
+.site-button-whatsapp {
+  color: #fff;
+  padding: 15px 40px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #25D366;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+.site-button-whatsapp.sb-bdr-light {
+  border-right: 6px solid #25D366;
+}
+.site-button-whatsapp:active, .site-button-secondry:focus, .site-button-secondry:visited {
+  background-color: #000;
+  color: #25D366;
+}
+.site-button-whatsapp:hover {
+  background-color: #000;
+  color: #25D366;
+}
+
+
+
+.site-button-ww {
+  color: #1967d2;
+  padding: 15px 40px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #e0eeff;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+.site-button-ww.sb-bdr-light {
+  border-right: 6px solid #fff;
+}
+.site-button-ww:active, .site-button-secondry:focus, .site-button-secondry:visited {
+  background-color: #000;
+  color: #fff;
+}
+.site-button-ww:hover {
+  background-color: #000;
+  color: #f9fcff;
+}
+
+.site-button-bb {
+  color: #fff;
+  padding: 15px 40px;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #1967d2;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+.site-button-bb.sb-bdr-light {
+  border-right: 6px solid #fff;
+}
+.site-button-bb:active, .site-button-secondry:focus, .site-button-secondry:visited {
+  background-color: #000;
+  color: #fff;
+}
+.site-button-bb:hover {
+  background-color: #000;
+  color: #f9fcff;
 }
 
 /*====Button Effect====*/
@@ -5716,7 +5824,7 @@ button.scroltop {
   background: #1d1b18;
   border: none;
   position: fixed;
-  right: 15px;
+  left: 15px;
   bottom: 15px;
   text-transform: uppercase;
   margin: 0;
