@@ -2888,7 +2888,7 @@ ol li {
   padding-top: 10px;
   padding-bottom: 10px;
   background: transparent;
-  max-width: 1146px;
+  max-width: 100%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -3308,7 +3308,6 @@ ol li {
 }
 .header-style-3 .is-fixed .main-bar.color-fill {
   background-color: #fff;
-  border-radius: 10px;
   box-shadow: 0px 0px 25px rgba(56, 152, 226, 0.3);
 }
 .header-style-3 .is-fixed .header-nav .nav > li {
