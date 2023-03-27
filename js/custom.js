@@ -1064,11 +1064,6 @@ All JavaScript fuctions Start
 	}
 	
 
-// > page loader function by = custom.js ========================= //		
-	function page_loader() {
-		$('.loading-area').fadeOut();
-	}
-
 /*--------------------------------------------------------------------------------------------
     Window on scroll ALL FUNCTION START
 ---------------------------------------------------------------------------------------------*/
@@ -1184,9 +1179,7 @@ All JavaScript fuctions Start
 jQuery(window).on('load', function () {
 	// > masonry function function by = isotope.pkgd.min.js		
 	masonryBox(),
-	color_fill_header(),
-	// > page loader function by = custom.js		
-	page_loader();
+	color_fill_header();
 });
 
  /*===========================
