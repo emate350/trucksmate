@@ -2428,11 +2428,13 @@ ol li {
 /*---Owl button bottom to left---*/
 .owl-btn-bottom-left .owl-nav {
   text-align: left;
+  content: "Previous testimonial";
 }
 
 /*Owl button bottom to right*/
 .owl-btn-bottom-right .owl-nav {
   text-align: right;
+  content: "Next testimonial";
 }
 
 /*---Owl button vertical to center--*/
