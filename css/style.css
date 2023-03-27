@@ -2170,7 +2170,7 @@ ol li {
 }
 
 .site-button-whatsapp {
-  color: #fff;
+  color: #05AD05;
   padding: 15px 40px;
   letter-spacing: 1px;
   position: relative;
@@ -2178,20 +2178,20 @@ ol li {
   cursor: pointer;
   display: inline-block;
   border-radius: 10px;
-  background-color: #2BB741;
+  background-color: #fff;
   border: none;
   font-size: 15px;
   font-weight: 700;
 }
 .site-button-whatsapp.sb-bdr-light {
-  border-right: 6px solid #2BB741;
+  border-right: 6px solid #05AD05;
 }
 .site-button-whatsapp:active, .site-button-secondry:focus, .site-button-secondry:visited {
-  background-color: #000;
+  background-color: #05AD05;
   color: #fff;
 }
 .site-button-whatsapp:hover {
-  background-color: #000;
+  background-color: #05AD05;
   color: #fff;
 }
 
