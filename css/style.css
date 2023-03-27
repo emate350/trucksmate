@@ -2178,21 +2178,21 @@ ol li {
   cursor: pointer;
   display: inline-block;
   border-radius: 10px;
-  background-color: #25D366;
+  background-color: #2BB741;
   border: none;
   font-size: 15px;
   font-weight: 700;
 }
 .site-button-whatsapp.sb-bdr-light {
-  border-right: 6px solid #25D366;
+  border-right: 6px solid #2BB741;
 }
 .site-button-whatsapp:active, .site-button-secondry:focus, .site-button-secondry:visited {
   background-color: #000;
-  color: #25D366;
+  color: #fff;
 }
 .site-button-whatsapp:hover {
   background-color: #000;
-  color: #25D366;
+  color: #fff;
 }
 
 
@@ -7663,11 +7663,11 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 .text-clr-pink {
-  color: #bc84ca;
+  color: #9952AB;
 }
 
 .text-clr-green {
-  color: #56d8b1;
+  color: #2BB741;
 }
 
 .text-clr-green2 {
