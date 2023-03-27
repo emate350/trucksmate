@@ -980,7 +980,6 @@ All JavaScript fuctions Start
 	}
 	//DropZone File Uploading Function End =========================//	
 
-
 	//Maximum input box fields function Start by custom.js==============//
 
 	var max_fields      = 100; //maximum input boxes allowed
@@ -1067,7 +1066,7 @@ All JavaScript fuctions Start
 
 // > page loader function by = custom.js ========================= //		
 	function page_loader() {
-		$('.loading-area').fadeOut(100);
+		$('.loading-area').fadeOut();
 	}
 
 /*--------------------------------------------------------------------------------------------
