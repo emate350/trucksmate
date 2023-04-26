@@ -250,7 +250,7 @@
 							<tr>
 								<td contentEditable="true">
 									<span style="color:#1967d2"><b>ZELLE ACCOUNT</b><br><br>
-									<h2><i class="bi bi-credit-card-2-back-fill"></i> <b>billing@onairtel.com</b></h2></span><br />
+									<h2><b>billing@onairtel.com</b></h2></span><br />
 								</td>
 
 								<td contentEditable="true">
@@ -290,7 +290,10 @@
 			</table>
 			<br><br><br>
 		
-			<p>Payment is required within <b>5 business days</b> of invoice date. Please send remittance to info@trucksmate.com</p>
+			<p>Payment is required within <b>5 business days</b> of invoice date. Please send remittance to info@trucksmate.com</p><br>
+			Regards,<br>
+			Finance Department<br>
+			<b>TrucksMate</b><br><br>
 			  <button id="printButton" onclick="print()">Print</button>
 		  <button onclick="addRow()">Add Row</button>
 		</div>
@@ -311,7 +314,7 @@
         callback: function(docPDF) {
           docPDF.save('TrucksMate Payment.pdf');
         },
-        x: 5,
+        x: 10,
         y: 5,
         width: 190,
         windowWidth: 750
