@@ -5,6 +5,8 @@
 		<meta name="robots" content="noindex, nofollow">
   <!-- load the jsPDF library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <!-- load the html2canvas library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 		<title>Create New Payment | TrucksMate</title>
@@ -33,7 +35,7 @@
 			}
 
 			.invoice-box table tr td:nth-child(2) {
-				text-align: right;
+				text-align: left;
 			}
 
 			.invoice-box table tr.top table td {
@@ -71,7 +73,7 @@
 				border-bottom: none;
 			}
 
-			.invoice-box table tr.total td:nth-child(2) {
+			.invoice-box table tr.total td:nth-child(4) {
 				border-top: 2px solid #eee;
 				font-weight: bold;
 			}
@@ -97,7 +99,7 @@
 			}
 
 			.invoice-box.rtl table {
-				text-align: right;
+				text-align: left;
 			}
 
 			.invoice-box.rtl table tr td:nth-child(2) {
@@ -111,12 +113,108 @@
 	
 	</head>
 
-	<body>
+	<body id="printTable">
 	<div class="content">
-		<div id="printTable" class="invoice-box">
+		<div class="invoice-box">
+		<style>
+			.invoice-box {
+				max-width: 800px;
+				margin: auto;
+				padding: 30px;
+				border: 1px solid #eee;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+				font-size: 16px;
+				line-height: 24px;
+				font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+				color: #555;
+			}
+
+			.invoice-box table {
+				width: 100%;
+				line-height: inherit;
+				text-align: left;
+			}
+
+			.invoice-box table td {
+				padding: 5px;
+				vertical-align: top;
+			}
+
+			.invoice-box table tr td:nth-child(2) {
+				text-align: left;
+			}
+
+			.invoice-box table tr.top table td {
+				padding-bottom: 20px;
+			}
+
+			.invoice-box table tr.top table td.title {
+				font-size: 45px;
+				line-height: 45px;
+				color: #333;
+			}
+
+			.invoice-box table tr.information table td {
+				padding-bottom: 40px;
+			}
+
+			.invoice-box table tr.heading td {
+				background: #eee;
+				border-bottom: 1px solid #ddd;
+				font-weight: bold;
+			}
+
+		.content {
+			display: none;
+		}
+			.invoice-box table tr.details td {
+				padding-bottom: 20px;
+			}
+
+			.invoice-box table tr.item td {
+				border-bottom: 1px solid #eee;
+			}
+
+			.invoice-box table tr.item.last td {
+				border-bottom: none;
+			}
+
+			.invoice-box table tr.total td:nth-child(4) {
+				border-top: 2px solid #eee;
+				font-weight: bold;
+			}
+
+			@media only screen and (max-width: 600px) {
+				.invoice-box table tr.top table td {
+					width: 100%;
+					display: block;
+					text-align: center;
+				}
+
+				.invoice-box table tr.information table td {
+					width: 100%;
+					display: block;
+					text-align: center;
+				}
+			}
+
+			/** RTL **/
+			.invoice-box.rtl {
+				direction: rtl;
+				font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+			}
+
+			.invoice-box.rtl table {
+				text-align: left;
+			}
+
+			.invoice-box.rtl table tr td:nth-child(2) {
+				text-align: left;
+			}
+		</style>
 			<table cellpadding="0" cellspacing="0" id="myTable">
 				<tr class="top">
-					<td colspan="2">
+					<td colspan="5">
 						<table>
 							<tr>
 								<td class="title">
@@ -124,9 +222,7 @@
 								</td>
 
 								<td contentEditable="true">
-									Invoice #: 123<br />
-									Created: January 1, 2023<br />
-									Due: February 1, 2023
+									<br><h3>Invoice No: #123</h3><br />
 								</td>
 							</tr>
 						</table>
@@ -134,19 +230,34 @@
 				</tr>
 
 				<tr class="information">
-					<td colspan="2">
+					<td colspan="4">
 						<table>
 							<tr>
 								<td contentEditable="true">
-									TrucksMate<br />
-									350 Springfield Ave, Suite #30<br />
-									Summit, NJ 07901
+									<b>FROM</b><br><br>
+									+1 (917) 580-5793<br />
+									info@trucksmate.com<br />
+									 350 Springfield Ave, Suite #30, Summit, NJ 07901
 								</td>
 
 								<td contentEditable="true">
-									Trucker's Company<br />
-									Mr Name<br />
-									name@example.com
+									<b>TO</b><br><br>
+									<b>MC No: </b>15000000 <br />
+									<b>Company: </b>Name <br />
+									
+								</td>
+								
+							</tr>
+							<tr>
+								<td contentEditable="true">
+									<span style="color:#1967d2"><b>ZELLE ACCOUNT</b><br><br>
+									<h2><b>billing@onairtel.com</b></h2></span><br />
+								</td>
+
+								<td contentEditable="true">
+									<b>Account Details</b><br><br>
+									<b>Dispatcher Name :</b> Name<br />
+									<b>Accountant Name  :</b> Name<br />
 								</td>
 							</tr>
 						</table>
@@ -155,23 +266,35 @@
 
 				<tr class="heading">
 					<td>Services</td>
+					<td>Total</td>
+					<td>Commission</td>
+					<td>Amount Due</td>
 
-					<td>Price</td>
 				</tr>
 
 				<tr class="item last" id="amount">
 					<td contentEditable="true">Service Name</td>
 
 					<td contentEditable="true">$0.00</td>
+					<td contentEditable="true">0%</td>
+					<td contentEditable="true">$0.00</td>
 				</tr>
 				
 				<tr class="total">
 				
+				<td><br><b>TOTAL</b></td>
+					<td></td>
 					<td></td>
 					
-					<td contentEditable="true"><br>Total: $0.00</td>
+					<td contentEditable="true"><br><span style="color:#1967d2">$0.00</span></td>
 				</tr>
 			</table>
+			<br><br><br>
+		
+			<p>Payment is required within <b>5 business days</b> of invoice date. Please send remittance to info@trucksmate.com</p><br>
+			Regards,<br>
+			Finance Department<br>
+			<b>TrucksMate</b><br><br>
 			  <button id="printButton" onclick="print()">Print</button>
 		  <button onclick="addRow()">Add Row</button>
 		</div>
@@ -192,10 +315,10 @@
         callback: function(docPDF) {
           docPDF.save('TrucksMate Payment.pdf');
         },
-        x: 15,
-        y: 15,
-        width: 176,
-        windowWidth: 650
+        x: 10,
+        y: 5,
+        width: 190,
+        windowWidth: 750
       });
     }
   </script>
@@ -205,8 +328,14 @@
   var row = table.insertRow(4); // insert row at the last position
   var item = row.insertCell(0);
   var price = row.insertCell(1);
+  var perc = row.insertCell(2);
+  var due = row.insertCell(3);
   item.innerHTML = "New Item";
   price.innerHTML = "$0.00";
+  perc.innerHTML = "0%";
+  perc.contentEditable = "true";
+  due.innerHTML = "$0.00";
+  due.contentEditable = "true";
   price.contentEditable = "true";
   item.contentEditable = "true";
   price.class = "item last" ;
