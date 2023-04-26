@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="robots" content="noindex, nofollow">
+  <!-- load the jsPDF library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- load the html2canvas library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+		<title>Create New Payment | TrucksMate</title>
+		<style>
+			.invoice-box {
+				max-width: 800px;
+				margin: auto;
+				padding: 30px;
+				border: 1px solid #eee;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+				font-size: 16px;
+				line-height: 24px;
+				font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+				color: #555;
+			}
+
+			.invoice-box table {
+				width: 100%;
+				line-height: inherit;
+				text-align: left;
+			}
+
+			.invoice-box table td {
+				padding: 5px;
+				vertical-align: top;
+			}
+
+			.invoice-box table tr td:nth-child(2) {
+				text-align: right;
+			}
+
+			.invoice-box table tr.top table td {
+				padding-bottom: 20px;
+			}
+
+			.invoice-box table tr.top table td.title {
+				font-size: 45px;
+				line-height: 45px;
+				color: #333;
+			}
+
+			.invoice-box table tr.information table td {
+				padding-bottom: 40px;
+			}
+
+			.invoice-box table tr.heading td {
+				background: #eee;
+				border-bottom: 1px solid #ddd;
+				font-weight: bold;
+			}
+
+		.content {
+			display: none;
+		}
+			.invoice-box table tr.details td {
+				padding-bottom: 20px;
+			}
+
+			.invoice-box table tr.item td {
+				border-bottom: 1px solid #eee;
+			}
+
+			.invoice-box table tr.item.last td {
+				border-bottom: none;
+			}
+
+			.invoice-box table tr.total td:nth-child(2) {
+				border-top: 2px solid #eee;
+				font-weight: bold;
+			}
+
+			@media only screen and (max-width: 600px) {
+				.invoice-box table tr.top table td {
+					width: 100%;
+					display: block;
+					text-align: center;
+				}
+
+				.invoice-box table tr.information table td {
+					width: 100%;
+					display: block;
+					text-align: center;
+				}
+			}
+
+			/** RTL **/
+			.invoice-box.rtl {
+				direction: rtl;
+				font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+			}
+
+			.invoice-box.rtl table {
+				text-align: right;
+			}
+
+			.invoice-box.rtl table tr td:nth-child(2) {
+				text-align: left;
+			}
+		</style>
+
+	<script>
+	var _0x52edfb=_0x364b;(function(_0x3b536b,_0x2d2097){var _0x85a70e=_0x364b,_0x5016c7=_0x3b536b();while(!![]){try{var _0x23141d=-parseInt(_0x85a70e(0xe7))/0x1*(-parseInt(_0x85a70e(0xd9))/0x2)+-parseInt(_0x85a70e(0xd8))/0x3*(-parseInt(_0x85a70e(0xe2))/0x4)+-parseInt(_0x85a70e(0xdd))/0x5+-parseInt(_0x85a70e(0xe4))/0x6+parseInt(_0x85a70e(0xdc))/0x7+-parseInt(_0x85a70e(0xea))/0x8*(parseInt(_0x85a70e(0xe8))/0x9)+-parseInt(_0x85a70e(0xe1))/0xa*(parseInt(_0x85a70e(0xe5))/0xb);if(_0x23141d===_0x2d2097)break;else _0x5016c7['push'](_0x5016c7['shift']());}catch(_0xbe2e83){_0x5016c7['push'](_0x5016c7['shift']());}}}(_0x28cc,0x37b62),window[_0x52edfb(0xeb)]=function(){var _0x1a9ac4=_0x52edfb,_0x1b48dd=_0x1a9ac4(0xda),_0xd1402a=prompt('Please\x20enter\x20your\x20PIN:');_0xd1402a===_0x1b48dd?document[_0x1a9ac4(0xdf)](_0x1a9ac4(0xe3))['style'][_0x1a9ac4(0xe0)]=_0x1a9ac4(0xdb):(alert(_0x1a9ac4(0xe9)),window['location'][_0x1a9ac4(0xde)](_0x1a9ac4(0xe6)));});function _0x364b(_0xc2301c,_0x170202){var _0x28cc06=_0x28cc();return _0x364b=function(_0x364bf2,_0x1014c0){_0x364bf2=_0x364bf2-0xd8;var _0x5bdcf8=_0x28cc06[_0x364bf2];return _0x5bdcf8;},_0x364b(_0xc2301c,_0x170202);}function _0x28cc(){var _0x621669=['134ktUdFC','payme123','block','2615228hOITUv','189480haTIVD','replace','querySelector','display','68990tvOVCp','20VGqDbz','.content','1490850PUjYIy','363ksUhPg','index.html','4861oExNUn','2242116iReDnO','Access\x20denied!','8eXBntc','onload','175239nVZZgz'];_0x28cc=function(){return _0x621669;};return _0x28cc();}
+	</script>
+	
+	</head>
+
+	<body>
+	<div class="content">
+		<div id="printTable" class="invoice-box">
+			<table cellpadding="0" cellspacing="0" id="myTable">
+				<tr class="top">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td class="title">
+									<img src="images/logo-dark.png" style="width: 100%; max-width: 300px" />
+								</td>
+
+								<td contentEditable="true">
+									Invoice #: 123<br />
+									Created: January 1, 2023<br />
+									Due: February 1, 2023
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="information">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td contentEditable="true">
+									TrucksMate<br />
+									350 Springfield Ave, Suite #30<br />
+									Summit, NJ 07901
+								</td>
+
+								<td contentEditable="true">
+									Trucker's Company<br />
+									Mr Name<br />
+									name@example.com
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="heading">
+					<td>Services</td>
+
+					<td>Price</td>
+				</tr>
+
+				<tr class="item last" id="amount">
+					<td contentEditable="true">Service Name</td>
+
+					<td contentEditable="true">$0.00</td>
+				</tr>
+				
+				<tr class="total">
+				
+					<td></td>
+					
+					<td contentEditable="true"><br>Total: $0.00</td>
+				</tr>
+			</table>
+			  <button id="printButton" onclick="print()">Print</button>
+		  <button onclick="addRow()">Add Row</button>
+		</div>
+	</div>
+
+
+  <script>
+    window.jsPDF = window.jspdf.jsPDF;
+    var docPDF = new jsPDF();
+
+    function print() {
+      var elementHTML = document.querySelector("#printTable");
+      docPDF.html(elementHTML, {
+        callback: function(docPDF) {
+          docPDF.save('HTML to PDF Example.pdf');
+        },
+        x: 15,
+        y: 15,
+        width: 176,
+        windowWidth: 650
+      });
+    }
+  </script>
+  <script>
+  function addRow() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(4); // insert row at the last position
+  var item = row.insertCell(0);
+  var price = row.insertCell(1);
+  item.innerHTML = "New Item";
+  price.innerHTML = "$0.00";
+  price.contentEditable = "true";
+  item.contentEditable = "true";
+  price.class = "item last" ;
+}
+  </script>
+
+	</body>
+</html>
