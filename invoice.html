@@ -189,6 +189,10 @@
     var docPDF = new jsPDF();
 
     function print() {
+    document.querySelector("#printButton").style.display = "none";
+    document.querySelectorAll("button").forEach(function(button) {
+      button.style.display = "none";
+    });
       var elementHTML = document.querySelector("#printTable");
       docPDF.html(elementHTML, {
         callback: function(docPDF) {
