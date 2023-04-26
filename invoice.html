@@ -9,12 +9,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 		<title>Create New Payment | TrucksMate</title>
 		<style>
-@media print {
-  #printButton, button {
-    display: none;
-  }
-}
-
 			.invoice-box {
 				max-width: 800px;
 				margin: auto;
@@ -203,6 +197,13 @@
         width: 176,
         windowWidth: 650
       });
+
+    // Show the buttons again after generating the PDF
+    document.querySelector("#printButton").style.display = "block";
+    document.querySelectorAll("button").forEach(function(button) {
+      button.style.display = "block";
+    });
+	
     }
   </script>
   <script>
