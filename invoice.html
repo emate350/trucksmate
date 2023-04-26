@@ -9,6 +9,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 		<title>Create New Payment | TrucksMate</title>
 		<style>
+@media print {
+  #printButton, button {
+    display: none;
+  }
+}
+
 			.invoice-box {
 				max-width: 800px;
 				margin: auto;
@@ -186,7 +192,7 @@
       var elementHTML = document.querySelector("#printTable");
       docPDF.html(elementHTML, {
         callback: function(docPDF) {
-          docPDF.save('HTML to PDF Example.pdf');
+          docPDF.save('TrucksMate Payment.pdf');
         },
         x: 15,
         y: 15,
