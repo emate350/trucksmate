@@ -287,43 +287,36 @@
                                       </div>
                                     </div>
                                   </div>
-<div class="col-xl-12 col-lg-12 col-md-12">
-  <div class="form-group">
-    <label>Referral (Optional)</label>
-    <div class="ls-inputicon-box">
-      <input class="form-control" name="referral" id="referral" required type="text" placeholder="Referral name">
-      <i class="fs-input-icon fa fa-user"></i>
-    </div>
-  </div>
-</div>
-
-<script>
-  // Function to get parameter from URL
-  function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-  }
-
-  // Get the referral value from the URL
-  var referralValue = getParameterByName('referral');
-
-  // Set the referral value as the default value for the input field
-  if (referralValue) {
-    var referralInput = document.getElementById('referral');
-    referralInput.value = referralValue;
-    
-    // Set the input field to read-only
-    referralInput.readOnly = true;
-  }
-</script>
-
-
-
+                                  <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                      <label>Referral (Optional)</label>
+                                      <div class="ls-inputicon-box">
+                                        <input class="form-control" name="referral" id="referral" required type="text" placeholder="Referral name">
+                                        <i class="fs-input-icon fa fa-user"></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <script>
+                                    // Function to get parameter from URL
+                                    function getParameterByName(name, url) {
+                                      if (!url) url = window.location.href;
+                                      name = name.replace(/[\[\]]/g, "\\$&");
+                                      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                                        results = regex.exec(url);
+                                      if (!results) return null;
+                                      if (!results[2]) return '';
+                                      return decodeURIComponent(results[2].replace(/\+/g, " "));
+                                    }
+                                    // Get the referral value from the URL
+                                    var referralValue = getParameterByName('referral');
+                                    // Set the referral value as the default value for the input field
+                                    if (referralValue) {
+                                      var referralInput = document.getElementById('referral');
+                                      referralInput.value = referralValue;
+                                      // Set the input field to read-only
+                                      referralInput.readOnly = true;
+                                    }
+                                  </script>
                                   <div class="col-xl-6 col-lg-6 col-md-12">
                                     <div class="form-group">
                                       <label>Truck Type</label>
