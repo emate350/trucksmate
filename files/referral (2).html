@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Code Generator</title>
+</head>
+<body>
+
+    <div style="max-width: 400px; margin: 50px auto;">
+        <h2>Referral Code Generator</h2>
+        <form id="referralForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+            <button type="button" onclick="generateReferralLink()">Generate Referral Link</button>
+        </form>
+
+        <p id="referralLink"></p>
+
+        <!-- Copy to clipboard button -->
+        <button onclick="copyToClipboard()" id="copyButton" style="display: none;">Copy Email</button>
+    </div>
+
+<script>
+    function generateReferralLink() {
+        // Get the email value from the input field
+        var email = document.getElementById('email').value;
+
+        // Display the generated referral link
+        var referralLink = 'https://trucksmate.com/?referral=' + email;
+        var referralLinkElement = document.getElementById('referralLink');
+        referralLinkElement.textContent = 'Your Referral Link: ' + referralLink;
+
+        // Show the copy button
+        var copyButton = document.getElementById('copyButton');
+        copyButton.style.display = 'block';
+    }
+
+    function copyToClipboard() {
+        // Get the email value from the referral link
+        var email = document.getElementById('email').value;
+
+        // Create a temporary input element
+        var tempInput = document.createElement('input');
+        tempInput.value = email;
+        document.body.appendChild(tempInput);
+
+        // Select the text in the input element
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+        // Copy the text to the clipboard
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        // Alert the user that the email has been copied
+        alert('Email copied to clipboard: ' + email);
+    }
+</script>
+
+</body>
+</html>

@@ -289,7 +289,7 @@
                                   </div>
 <div class="col-xl-12 col-lg-12 col-md-12">
   <div class="form-group">
-    <label>Referral</label>
+    <label>Referral (Optional)</label>
     <div class="ls-inputicon-box">
       <input class="form-control" name="referral" id="referral" required type="text" placeholder="Referral name">
       <i class="fs-input-icon fa fa-user"></i>
@@ -315,8 +315,12 @@
   // Set the referral value as the default value for the input field
   if (referralValue) {
     document.getElementById('referral').value = referralValue;
+    
+    // Disable the input field if referral parameter is present
+    document.getElementById('referral').disabled = true;
   }
 </script>
+
 
                                   <div class="col-xl-6 col-lg-6 col-md-12">
                                     <div class="form-group">
