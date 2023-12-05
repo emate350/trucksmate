@@ -142,13 +142,14 @@
                           <i class="fs-input-icon fa fa-file"></i>
                         </div>
                       </div>
+					            <p id="referralLink"></p>
+                      <button onclick="copyToClipboard()" id="copyButton" class="site-button" style="display: none;">Copy Link</button>
+					  
+					  <br>
                       <button type="button" class="site-button" onclick="generateReferralLink()">Generate Referral Link</button>
                     </form>
                     <br>
                     <br>
-               
-                      <p id="referralLink"></p>
-                      <button onclick="copyToClipboard()" id="copyButton" class="site-button" style="display: none;">Copy Email</button>
                  
                   </div>
                   <br>
@@ -183,7 +184,7 @@
                       document.execCommand('copy');
                       document.body.removeChild(tempInput);
                       // Alert the user that the link has been copied
-                      alert('Referral link copied to clipboard:\n' + referralLink);
+                      alert('Referral link copied:\n' + referralLink);
                     }
                   </script>
                 </div>
